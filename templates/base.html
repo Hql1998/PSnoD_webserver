@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>{{ page_title }}</title>
+  <link rel="icon" href="{{ url_for('.static', filename='img/icon.png') }}">
+  {{ bootstrap.load_css() }}
+  <link rel="stylesheet" href="{{ url_for('.static', filename='css/main.css') }}">
+</head>
+
+<body>
+<div class="container-fluid">
+  {% block jumbotron %}
+  {% endblock %}
+  <nav class="row navbar navbar-expand-lg navbar-dark" id="navbar">
+    <a class="nav-item navbar-brand" href="/">PSnoD</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav mx-auto col-4">
+        <a class="nav-item text-nowrap nav-link" href="/">Prediction<span class="sr-only">(current)</span></a>
+        <a class="nav-item text-nowrap nav-link" href="#">Job History</a>
+        <a class="nav-item text-nowrap nav-link" href="#">Infomation</a>
+      </div>
+    </div>
+  </nav>
+  {% block content %}
+  {% endblock %}
+  <footer class="row">
+    <small class="col-3 col-sm-7 mx-auto">&copy; LinGroup(lin-group.cn) &copy;2021 All rights reserved</small>
+  </footer>
+
+</div>
+{{ bootstrap.load_js() }}
+
+</body>
+</html>

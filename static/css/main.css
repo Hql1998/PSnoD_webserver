@@ -1,0 +1,43 @@
+body{
+    background-color: rgb(0,128,96);
+}
+#navbar {
+    background-color: #05285B;/*#05285B #5cdb95 rgb(0,128,96)     border: 1px solid #5cdb95;*/
+    text-align: center;
+    position: sticky;
+    z-index: 4;
+
+}
+.navbar-brand {
+    font-size: 30px;
+    font-weight: bold;
+}
+.nav-link{
+    font-size: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.navbar-nav{
+    position: relative;
+    left: -55px;
+}
+.jumbotron {
+    background-color: rgb(0,128,96);/*#05386B;#5cdb95;*/
+    color: white;
+    margin: 0px;
+}
+.jumbotron h1, .jumbotron p{
+    font-weight: bold;
+}
+footer small{
+    color: #FFFAF0;
+    text-align: center;
+}
+.intro-text{
+    margin: 50px 0px;
+    color: Ivory;
+    font-size: 18px;
+}
+.intro-text a{
+    color: Ivory;
+}

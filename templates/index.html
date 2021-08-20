@@ -1,9 +1,30 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>me, hql</title>
-    </head>
-    <body>
-        <h1>hello world</h1>
-    </body>
-</html>
+{% extends "base.html" %}
+
+{% block jumbotron %}
+<div class="jumbotron jumbotron-fluid text-center">
+  <h1 class="display-3">PSnoD</h1>
+  <p class="lead">Predictor for snoRNA association with Disease</p>
+</div>
+{% endblock %}
+
+
+{% block content %}
+<div class="row">
+  <div class="col-8 mx-auto intro-text">
+    <p >
+      Many studies have evidenced that small nucleolar RNAs (snoRNAs) play critical roles in the development of various human complex disease.
+      Discovering the associations between snoRNAs and diseases is an important step for understanding the pathogenesis and characteristics of diseases.
+    </p>
+    <p>
+      This study adopted a bounded nuclear norm regularization (BNNR)-based method to predict snoRNA-disease associations.
+      The benchmark dataset is filtered from Mammalian ncRNA-Disease Repository (<a href="http://www.rna-society.org/mndr/">MNDR</a> v3.1),
+      After removing entries with redundant or missing information, 220 snoRNAs, 28 diseases,
+      and 459 known associations between the two were adopted as benchmark dataset.
+    </p>
+    <p>
+      You could use this tool to predict potential disease associations with your intrested snoRNA.
+    </p>
+  </div>
+
+</div>
+{% endblock %}
