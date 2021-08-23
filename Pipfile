@@ -8,6 +8,9 @@ flask-sqlalchemy = "*"
 flask = "*"
 python-dotenv = "*"
 bootstrap-flask = "*"
+pandas = "*"
+numpy = "*"
+scipy = "*"
 
 [dev-packages]
 coverage = "*"

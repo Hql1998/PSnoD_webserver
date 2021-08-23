@@ -20,20 +20,47 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav mx-auto col-4">
-        <a class="nav-item text-nowrap nav-link" href="/">Prediction<span class="sr-only">(current)</span></a>
-        <a class="nav-item text-nowrap nav-link" href="#">Job History</a>
+        {% if active == "predict" %}
+        <a class="nav-item text-nowrap nav-link active" href="/predict">Prediction<span class="sr-only">(current)</span></a>
+        <a class="nav-item text-nowrap nav-link" href="/job_history">Job History</a>
         <a class="nav-item text-nowrap nav-link" href="#">Infomation</a>
+        {% elif active == "jop_history" %}
+        <a class="nav-item text-nowrap nav-link" href="/predict">Prediction<span class="sr-only">(current)</span></a>
+        <a class="nav-item text-nowrap nav-link active" href="/job_history">Job History</a>
+        <a class="nav-item text-nowrap nav-link" href="#">Infomation</a>
+        {% elif active == "infomation" %}
+        <a class="nav-item text-nowrap nav-link" href="/predict">Prediction<span class="sr-only">(current)</span></a>
+        <a class="nav-item text-nowrap nav-link" href="/job_history">Job History</a>
+        <a class="nav-item text-nowrap nav-link active" href="#">Infomation</a>
+        {% else %}
+        <a class="nav-item text-nowrap nav-link" href="/predict">Prediction<span class="sr-only">(current)</span></a>
+        <a class="nav-item text-nowrap nav-link" href="/job_history">Job History</a>
+        <a class="nav-item text-nowrap nav-link" href="#">Infomation</a>
+        {% endif %}
       </div>
     </div>
   </nav>
   {% block content %}
   {% endblock %}
+  {% for message in get_flashed_messages() %}
+  <div class="container mx-auto">
+    <div class="alert alert-warning alert-dismissible fade show row" role="alert">
+    <strong>Alert! </strong>{{ message }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  </div>
+
+  {% endfor %}
+
   <footer class="row">
     <small class="col-3 col-sm-7 mx-auto">&copy; LinGroup(lin-group.cn) &copy;2021 All rights reserved</small>
   </footer>
 
 </div>
-{{ bootstrap.load_js() }}
 
+<script src="{{ url_for('.static', filename='js/main.js') }}"></script>
+{{ bootstrap.load_js() }}
 </body>
 </html>

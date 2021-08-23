@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container predict_content">
+    <div class="row">
+        <p class="intro-text mx-auto">Submit your snoRNA FASTA sequence, both U and T are accepted</p>
+    </div>
+
+    <form method="post" class="container mx-auto" enctype="multipart/form-data">
+        <div class="row">
+            <textarea rows="10" cols="50" class="col-10 mx-auto" id="pred-textarea" name="inputed_sequence" placeholder=">fasta comments..."></textarea>
+        </div>
+        <div class="row pred-submit">
+            <div class="col-1"></div>
+            <input type="file" class="btn btn-light col-4 mx-auto" name="file" onclick="clear_textarea()">
+            <button type="button" class="btn col-2 mx-auto btn-light" onclick="generate_example()">Example</button>
+            <input type="button" class="btn col-2 mx-auto btn-light" onclick="clear_textarea()" value="Clear All">
+            <input type="submit" class="btn col-2 mx-auto btn-light">
+            <div class="col-1"></div>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

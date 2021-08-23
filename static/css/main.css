@@ -6,6 +6,7 @@ body{
     text-align: center;
     position: sticky;
     z-index: 4;
+    margin-bottom: 20px;
 
 }
 .navbar-brand {
@@ -25,19 +26,50 @@ body{
     background-color: rgb(0,128,96);/*#05386B;#5cdb95;*/
     color: white;
     margin: 0px;
+    transition: 0.2s;
+
 }
 .jumbotron h1, .jumbotron p{
     font-weight: bold;
+}
+footer{
+    margin-top: 20px;
 }
 footer small{
     color: #FFFAF0;
     text-align: center;
 }
 .intro-text{
-    margin: 50px 0px;
+    margin-bottom: 20px;
     color: Ivory;
     font-size: 18px;
 }
 .intro-text a{
     color: Ivory;
+}
+.predict_content .intro-text {
+    color: rgb(19,20,22);
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.predict_content, .result_content{
+    border: 2px solid Ivory;
+    background-color: rgb(252,247,235);
+    padding: 20px;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+#pred-textarea{
+    outline: none;
+    border: 1px solid Ivory;
+}
+#pred-textarea:focus {
+    outline: none;
+    border:1px solid Ivory;
+    box-shadow: 0 0 10px #719ECE;
+  }
+
+.pred-submit{
+    margin-top: 20px;
 }
