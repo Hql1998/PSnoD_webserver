@@ -25,7 +25,7 @@ ALLOWED_EXTENSIONS = {'txt', "fasta", "fa"}
 
 app.config["SQLALCHEMY_DATABASE_URI"] = prefix + os.path.join(app.root_path, "database.db")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-app.config["SECRET_KEY"] = b"_5#y2LF4#d\xe9X\x00\xbe~Uq\xebX\xae\x81\x1fs\t\xb4\x99\xa3\x87\xec]/"
+app.config["SECRET_KEY"] = "??"
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 bootstrap = Bootstrap(app)
