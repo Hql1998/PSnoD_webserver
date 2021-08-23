@@ -39,16 +39,34 @@ def predict():
     target_sim = predict_snoRNAs(user_fasta_list)
     target_sim.to_csv(os.path.join(user_folder_path, "job1.csv"))
 
-    result_dict = []
+    result_list = []
     for i in range(target_sim.shape[1]):
-        result_dict.append([])
-        result_dict[i].append(target_sim.columns[i])
-        result_dict[i].append(list(target_sim.iloc[:, i].nlargest(5).index))
-        result_dict[i].append(list(target_sim.iloc[:, i].nlargest(5)))
+        result_list.append([])
+        result_list[i].append(target_sim.columns[i])
+        result_list[i].append(list(target_sim.iloc[:, i].nlargest(5).index))
+        result_list[i].append(list(target_sim.iloc[:, i].nlargest(5)))
 
-    return render_template("result.html", page_title="predict result", result_dict=result_dict, active="")
+    session['result_list'] = result_list
 
+    return redirect("/result")
+
+
+@app.route("/result")
+def result():
+    result_list = session['result_list']
+
+    return render_template("result.html", page_title="predict result", result_list=result_list, active="")
 
 @app.route("/job_history")
 def job_history():
     return render_template("job_history.html", page_tiel="PSnoD jobs", active="job_history")
+
+@app.route("/info")
+def info():
+    return render_template("infomation.html", page_tiel="PSnoD info", active="infomation")
+
+@app.route("/download_seq")
+def download_seq():
+    with open("./static/data/snoRNA_seq_noID.fa", "r") as f:
+        seq_file = f.read()
+    return Response(seq_file, mimetype="text/plain")

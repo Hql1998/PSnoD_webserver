@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container info_content">
+  <div class="row">
+    <div class="card col-sm-6">
+      <div class="card-body">
+        <h5 class="card-title">Resources</h5>
+        <p class="card-text">You could download the seq files</p>
+        <a href="/download_seq" class="btn btn-primary">download</a>
+      </div>
+    </div>
+    <div class="card col-sm-6">
+      <div class="card-body">
+        <h5 class="card-title">Citing us</h5>
+        <p class="card-text">Under publishing</p>
+        <a href="#" class="btn btn-primary" style="opacity:0">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="card col-sm-12 text-center">
+      <div class="card-body">
+        <h5 class="card-title">Contact us</h5>
+        <p class="card-text">please email to prof. Lin</p>
+        <a href="mailto:hlin@uestc.edu.cn" class="btn btn-primary">Mail to</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

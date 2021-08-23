@@ -4,12 +4,12 @@
 
 <div class="container result_content">
     <div class="accordion" id="result_accordion">
-        {% for i in range(result_dict|length) %}
+        {% for i in range(result_list|length) %}
         <div class="card">
             <div class="card-header" id="{{ 'heading' + i|string }}">
               <h5 class="mb-0">
                 <button class="btn" type="button" data-toggle="collapse" data-target="{{ '#' + 'collapse' + i|string }}" aria-expanded="true" aria-controls="collapseOne">
-                  {{ (i+1)|string + ".\t" + result_dict[i][0] }}
+                  {{ (i+1)|string + ".\t" + result_list[i][0] }}
                 </button>
               </h5>
             </div>
@@ -20,14 +20,14 @@
                       <thead>
                         <tr>
                             {% for j in range(5) %}
-                            <th scope="col">{{ result_dict[i][1][j][0] }}</th>
+                            <th scope="col">{{ result_list[i][1][j][0] }}</th>
                             {% endfor %}
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
                             {% for j in range(5) %}
-                            <td>{{ result_dict[i][2][j] }}</td>
+                            <td>{{ result_list[i][2][j] }}</td>
                             {% endfor %}
                         </tr>
                       </tbody>
